@@ -1,0 +1,38 @@
+CREATE TABLE `student` (
+  `regno` int(15) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `aadhar` int(100) NOT NULL,
+  'pan' int(100) NUMERIC,
+  'passport' int(100) NUMERIC,
+  'fname' varchar(20) NOT NULL,
+  'mname' varchar(20) NOT NULL,
+  'dob' varchar(20) NOT NULL,
+  'age' int(15) NOT NULL,
+  'address' varchar(200) NOT NULL, 
+  'gender' varchar(20) NOT NULL,
+  'caste' varchar(20) NOT NULL,
+  'phno' int(15) NOT NULL,
+  'pphno'int(15) NOT NULL,
+  'email' varchar(20) NOT NULL,
+  'admitted' varchar(20) NOT NULL,
+  'dojoin' varchar(20) DATE,
+  'passing' varchar(20) DATE,
+  'm10' int(15) NOT NULL,
+  'minter' int(15) NOT NULL,
+  'mdegree' int(15) NUMERIC,
+  'other'int(15) NUMERIC,
+  'scholareligible'  varchar(20) NOT NULL,
+  'projects' varchar(20) CHAR,
+  'placements'varchar(20) CHAR,
+  'achievements'varchar(20) CHAR,
+  'merits'varchar(20) CHAR,
+  'mcgpa' int(15) NUMERIC,
+  'mbacklog' int(15) NUMERIC
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `student` (`regno`, `name`, `aadhar`,'pan','passport','fname','mname','dob','age','address',
+'gender','caste' ,'phno','pphno','email','admitted','dojoin','passing','m10','minter','mdegree','other',
+'scholareligible','projects','placements','achievements','merits','mcgpa' ,'mbacklog') VALUES
+(6, '1ve17cs012', 98);
+CREATE TRIGGER `Insert` AFTER INSERT ON `student` FOR EACH ROW INSERT INTO trig VALUES(null,NEW.regno,
+'STUDENT INSERTED',NOW())
+$$
